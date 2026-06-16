@@ -6,6 +6,7 @@ print("Hola, soy tu asistente virtual para que puedas solicitar tu licencia! Esp
 print("Comenzare a pedirte tus datos, simplemente sera tu Apellido y tu Documento Nacional de Identidad")
 
 while True:
+    condi_0 = False
     condi_1 = False
     condi_2 = False
     apellido_empleado=input("Dime, cual es tu apellido?\n>>>").capitalize()
@@ -17,7 +18,9 @@ while True:
     documento=validar.entero(documento_empleado)
     if documento:
         condi_2=leer_y_actualizar.buscar_dni(documento_empleado)
-    if condi_1 and condi_2:
+    if validar.iguales(apellido_empleado,documento_empleado):
+        condi_0 = True
+    if condi_0 and condi_1 and condi_2:
         break
     else:
         print("\nUps, ocurrio un error! Asegurate de poner datos correctamente, intentemos nuevamente!")
@@ -47,5 +50,5 @@ if condi_3 and condi_4:
 elif condi_3 == True and condi_4 == False:
     print("\nNo dispones de esa cantidad de dias para salir de vacacaciones, intentalo nuevamente mas tarde!\nHasta pronto!")
 else:
-    print("\nVaya, te equivocaste, porfavor intenta nuevamente mas tarde!\nHasta pronto!")
+    print("Vaya, te equivocaste, porfavor intenta nuevamente mas tarde!\nHasta pronto!")
 
