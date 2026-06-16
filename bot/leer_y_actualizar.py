@@ -31,7 +31,7 @@ def actualizar_dias(dias, id): #Actulizar dias de vacaciones
                 info.writerows(lista)
                 return True
 
-def restantes(id):
+def restantes(id): #Muestra la cantidad de dias restantes que le queda al empleado
     with open("data_store/datos.csv","r",newline="",encoding="UTF-8") as archivo:
         info=csv.DictReader(archivo)
         for dias in info:
