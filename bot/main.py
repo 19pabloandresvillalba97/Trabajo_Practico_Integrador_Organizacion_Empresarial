@@ -12,7 +12,7 @@ while True:
     apellido=validar.texto(apellido_empleado)
     if apellido:
         condi_1=leer_y_actualizar.buscar_apellido(apellido_empleado)
-    print("Muy bien ! Ahora dime cual es tu Numero de documento (Sin puntos)")
+    print("\nMuy bien ! Ahora dime cual es tu Numero de documento (Sin puntos)")
     documento_empleado=input("Ingresa el numero: ")
     documento=validar.entero(documento_empleado)
     if documento:
@@ -31,15 +31,21 @@ cantidad=input("Dime cuantos dias: ")
 validar_dias=validar.vacaciones(cantidad)
 if validar_dias:
     condi_3 = True
-    restante=validar.dias_disponibles(cantidad)
-    if restante.isdigit():
+    restante=validar.dias_disponibles(cantidad,documento_empleado)
+    if restante >= 0:
         condi_4=True
 if condi_3 and condi_4:
     print("\nPerfecto, estoy trabajando en tu solicitud\n")
-    print("Ya casi estamos\n")
-    print("Perfecto, solicitud aprobada!!\n")
+    print("\nYa casi estamos\n")
+    print("\nPerfecto, solicitud aprobada!!\n\n")
+    leer_y_actualizar.actualizar_dias(restante,documento_empleado)
+    disponible=leer_y_actualizar.restantes(documento_empleado)
+    print()
+    print(f"Me agradada informale señor {apellido_empleado} que solicito {cantidad} dias de vaciones, y le quedan {disponible} dias para tener otras vacaciones!\n")
+    print("\nAnte cualquier duda no dude en comunicarse con su jefe/encargado\n")
+    print("\nMe despido, que tenga buen dia!\n")
 elif condi_3 == True and condi_4 == False:
-    print("No dispones de esa cantidad de dias para salir de vacacaciones, intentalo nuevamente mas tarde!\nHasta pronto!")
+    print("\nNo dispones de esa cantidad de dias para salir de vacacaciones, intentalo nuevamente mas tarde!\nHasta pronto!")
 else:
-    print("Vaya, te equivocaste, porfavor intenta nuevamente mas tarde!\nHasta pronto!")
+    print("\nVaya, te equivocaste, porfavor intenta nuevamente mas tarde!\nHasta pronto!")
 
