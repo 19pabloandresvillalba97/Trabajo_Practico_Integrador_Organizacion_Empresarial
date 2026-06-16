@@ -26,7 +26,7 @@ def vacaciones(dias): #Cantidad de dias solicitados
     else:
         return False
 
-def texto(apellido):
+def texto(apellido): #Verifica que el apellido sea una cadena de texto
     if len(apellido) > 0 and len(apellido) <=20:
         separar=apellido.split()
         for palabra in separar:
@@ -44,8 +44,17 @@ def dias_disponibles(dias,documento): #Validacion de cantidad de dias de vacacio
         info=csv.DictReader(archivo)
         for empleado in info:
             if empleado['id'] == documento:
-                total = int(empleado['dias_disponibles']) - int(dias)
+                resta1= empleado['dias_disponibles']
+                total = int(resta1) - int(dias) 
                 if total >= 0:
                     return total
                 else:
                     return False
+
+def iguales(apellido,documento): #Para verificar que el apellido y el numero de documento sean los mismos
+    with open("data_store/datos.csv","r",newline="", encoding="UTF-8") as archivo:
+        info=csv.DictReader(archivo)
+        for dato in info:
+            if dato['id'] == documento and dato['apellido'] == apellido:
+                return True
+    return False
