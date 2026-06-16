@@ -20,6 +20,26 @@ while True:
     if condi_1 and condi_2:
         break
     else:
-        print("\nUps, asegurate de poner datos correctamente, intentemos nuevamente!")
+        print("\nUps, ocurrio un error! Asegurate de poner datos correctamente, intentemos nuevamente!")
 
-print("Perfecto, tus datos fueron validados correctamente, continuamos...\n")
+print("\nPerfecto, tus datos fueron validados correctamente, continuamos...\n")
+print("Muy bien, estamos cerca de terminar con tu solicitud!\n")
+print("Sabes cuantos dias de vacaciones solicitaras?")
+condi_3 = False
+condi_4 = False
+cantidad=input("Dime cuantos dias: ")
+validar_dias=validar.vacaciones(cantidad)
+if validar_dias:
+    condi_3 = True
+    restante=validar.dias_disponibles(cantidad)
+    if restante.isdigit():
+        condi_4=True
+if condi_3 and condi_4:
+    print("\nPerfecto, estoy trabajando en tu solicitud\n")
+    print("Ya casi estamos\n")
+    print("Perfecto, solicitud aprobada!!\n")
+elif condi_3 == True and condi_4 == False:
+    print("No dispones de esa cantidad de dias para salir de vacacaciones, intentalo nuevamente mas tarde!\nHasta pronto!")
+else:
+    print("Vaya, te equivocaste, porfavor intenta nuevamente mas tarde!\nHasta pronto!")
+
