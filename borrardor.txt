@@ -1,0 +1,41 @@
+Se abre el programa
+El bot saluda, y pide apellido y dni (apellido e id)
+while True:
+condi_1 y condi_2 = false
+apellido_empleado "ingrese su apellido"
+apellido = validar.texto(apellido_empleado)
+if True
+	condi_1=leer_y_actualizar.buscar_apellido(apellido_empleado)
+
+
+documento "ingrese documento"
+id = validar.entero(documento)
+if true
+	condi_2=leer_y_actualizar.buscar_dni(documento)
+primer compuerta explusiva : DATOS VALIDOS?
+si condi_1 y condi_2 son verdaderas, break, si una de ellas es falsa se repite el bucle
+
+_______
+SOLICITAR AL USUARIO LA CANTIDAD DE DIAS
+condi_3 y condi_4 = false
+cantidad = "ingrese cantidad"
+dias_solicitados = validar.vacaciones(cantidad)
+if true
+	condi_3 = true
+	restante=validar.dias_disponibles(cantidad)
+	if solicitado es un numero entero (es decir que si tengo 20 dias y pido 15, restante vale 5)
+		condi_4=True
+	else (False)
+segunda compuerta exclusiva: DIAS DISPONIBLES
+si condi_3 y condi_4 son verdaderas, continuamos, en caso que una sea falsa se sale del programa
+"""en caso de que salga del programa, si condi_3 = false "Ingrese un valor correcto"
+   si condi_3 es true y condi_4 es falsa "No dispone de esa cantidad de dias de vacaciones"
+"""
+_____
+Actualizamos los datos
+leer_y_actualizar.actualizar_dias(restante,id)
+"""el bot actualiza la cantidad de dias restantes que le quede a un empleado, lo busca mediante su dni ya que es un numero unico"""
+
+el bot muestra un mensaje al usuario diciendo que la solicitud fue exitosa
+
+se termina el programa
