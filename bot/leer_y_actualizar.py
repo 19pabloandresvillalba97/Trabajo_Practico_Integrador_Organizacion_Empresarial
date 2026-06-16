@@ -18,13 +18,15 @@ def buscar_dni(documento): #buscar por documento
 def actualizar_dias(dias, id): #Actulizar dias de vacaciones
     lista=[]
     encabezado=["apellido","id","dias_disponibles"]
+    with open("data_store/datos.csv","r",newline="",encoding="UTF-8") as archivo:
+        info=csv.DictReader(archivo)
+        for elemento in info:
+            lista.append(elemento)
     with open("data_store/datos.csv", "w", newline="", encoding="UTF-8") as archivo:
         info=csv.DictWriter(archivo,fieldnames=encabezado)
-        for datos in info:
-            lista.append(datos)
         for elemento in lista:
             if elemento['id'] == id:
-                elemento['dias_disponibles'] == dias
+                elemento['dias_disponibles'] = dias
                 info.writeheader()
                 info.writerows(lista)
                 return True
