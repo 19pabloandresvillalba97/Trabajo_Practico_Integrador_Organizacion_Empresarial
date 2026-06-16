@@ -1,0 +1,4 @@
+nombre,descripcion,longitud,tipo,condiccion
+apellido_empleado,Apellido del empleado,20,string,No puede estar vacio
+documento_empleado,Documento del empleado,8,int,Valor unico
+cantidad,Cantidad de dias solicitados,2,int,Numero positivo
