@@ -1,3 +1,5 @@
+import csv
+
 def entero(documento): #Documento
     if len(documento) == 8:
         try:
@@ -35,3 +37,15 @@ def texto(apellido):
         return True
     else:
         return False
+
+def dias_disponibles(dias,documento): #Validacion de cantidad de dias de vacaciones
+    total=0
+    with open("data_store/datos.csv", "r", newline="", encoding="UTF-8") as archivo:
+        info=csv.DictReader(archivo)
+        for empleado in info:
+            if empleado['id'] == documento:
+                total = empleado['dias_disponibles'] - dias
+                if total >= 0:
+                    return total
+                else:
+                    return False
