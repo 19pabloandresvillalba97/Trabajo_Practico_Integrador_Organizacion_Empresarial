@@ -44,7 +44,7 @@ def dias_disponibles(dias,documento): #Validacion de cantidad de dias de vacacio
         info=csv.DictReader(archivo)
         for empleado in info:
             if empleado['id'] == documento:
-                total = empleado['dias_disponibles'] - dias
+                total = int(empleado['dias_disponibles']) - int(dias)
                 if total >= 0:
                     return total
                 else:
