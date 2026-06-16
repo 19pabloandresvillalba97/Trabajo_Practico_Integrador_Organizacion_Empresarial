@@ -27,6 +27,7 @@ while True:
 
 print("\nPerfecto, tus datos fueron validados correctamente, continuamos...\n")
 print("Muy bien, estamos cerca de terminar con tu solicitud!\n")
+print(f"\tTienes {leer_y_actualizar.restantes(documento_empleado)} dias disponibles para salir de vacaciones!\n")
 print("Sabes cuantos dias de vacaciones solicitaras?")
 condi_3 = False
 condi_4 = False
