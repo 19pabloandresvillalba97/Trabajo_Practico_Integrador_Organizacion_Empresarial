@@ -28,3 +28,10 @@ def actualizar_dias(dias, id): #Actulizar dias de vacaciones
                 info.writeheader()
                 info.writerows(lista)
                 return True
+
+def restantes(id):
+    with open("data_store/datos.csv","r",newline="",encoding="UTF-8") as archivo:
+        info=csv.DictReader(archivo)
+        for dias in info:
+            if dias['id'] == id:
+                return dias['dias_disponibles']
