@@ -40,7 +40,7 @@ validar_dias=validar.vacaciones(days)
 if validar_dias:
     condi_3 = True # Dias de longitud 2
     restante=validar.dias_disponibles(days,id) #Puede devolver un numero entero mayor a 0 o un False
-    if restante >= 0: #si devuelve un entero
+    if restante > 0: #si devuelve un entero
         condi_4=True #Devuelve los dias de vacaciones que le quedan al empleado
 
 #Conpuerta exclusiva de dias disponibles
