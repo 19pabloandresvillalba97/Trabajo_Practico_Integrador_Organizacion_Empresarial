@@ -1,0 +1,7 @@
+campo,descripcion,tipo,origen,destino
+name,Apellido del solicitante,string,usuario,bot/base de datos
+id,Documento del solicitante,int,usuario,bot/base de datos
+days,Dias solicitados de vacaciones,int,usuario,base de datos
+validar,Comprobacion de datos del usuario,Bool,bot,compuerta exclusiva
+error,Notificacion de dato erroneo,string,bot,cliente
+aprobado,Notificacion de dato correcto,string,bot,cliente
