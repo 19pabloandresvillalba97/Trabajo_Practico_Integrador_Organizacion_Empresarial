@@ -49,7 +49,7 @@ def dias_disponibles(dias,documento): #Validacion de cantidad de dias de vacacio
                 if total >= 0:
                     return total
                 else:
-                    return False
+                    return None
 
 def iguales(apellido,documento): #Para verificar que el apellido y el numero de documento sean los mismos
     with open("data_store/datos.csv","r",newline="", encoding="UTF-8") as archivo:
